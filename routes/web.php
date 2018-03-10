@@ -11,16 +11,20 @@
 |
 */
 
-Route::get('/', 'BlogController@index');
-Route::get('/post/{slug}', 'BlogController@show');
-Route::get('/contato', function(){
+/* Rota da página principal - Landing Page */
+Route::get('/', 'HomePageController@index');
+
+
+Route::get('/blog', 'BlogController@index');
+Route::get('/blog/post/{slug}', 'BlogController@show');
+Route::get('/blog/contato', function(){
 	return view('contato');
 });
-Route::get('/sobre-nos', function(){
-	return view('about');
-});
+Route::post('/blog/contato', 'BlogController@comentStore')->name('contato');
+Route::get('/blog/sobre-nos', 'BlogController@about');
 
-Route::group(['prefix' => 'admin'], function () {
+/* Rota para painel administrativo do blog */
+Route::group(['prefix' => '/admin'], function () {
     Voyager::routes();
 });
 

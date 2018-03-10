@@ -1,5 +1,5 @@
 <div class="post-preview">
-  <a href="{{ url('/post/' . $post->slug) }}">
+  <a href="{{ url('/blog/post/' . $post->slug) }}">
     <h2 class="post-title">
     {{ $post->title }}
     </h2>
@@ -7,6 +7,6 @@
     {{ $post->excerpt }}
     </h3>
   </a>
-  <p class="post-meta">Publicado por <a href="#">{{ $post->author->name }}</a> em {{ $post->created_at->format('d/m/Y') }}</p>
+  <p class="post-meta">Publicado por <a href="#">{{ $post->author->name }}</a> {{ $post->created_at->diffForHumans() }}</p>
 </div>
 <hr>

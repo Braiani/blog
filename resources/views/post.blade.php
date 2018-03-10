@@ -11,7 +11,7 @@
           <div class="post-heading">
             <h1>{{ $post->title }}</h1>
             <h2 class="subheading">{{ $post->excerpt }}</h2>
-            <span class="meta">Publicado por <a href="#">{{ $post->author->name }}</a> em {{ $post->created_at->format('d/m/Y') }}</span>
+            <span class="meta">Publicado por <a href="#">{{ $post->author->name }}</a> {{ $post->created_at->diffForHumans() }}</span>
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@
 @section('title', 'Sobre nós')
 
 @section('header')
-<header class="masthead" style="background-image: url('img/about-bg.jpg')">
+<header class="masthead" style="background-image: url('/img/about-bg.jpg')">
 	<div class="overlay"></div>
 	<div class="container">
 		<div class="row">
